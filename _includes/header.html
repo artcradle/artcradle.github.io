@@ -1,0 +1,22 @@
+<header>
+    <div id="logo">
+        <a href="{{ "/" | relative_url}}">ArtCradle</a>
+    </div>
+
+    <!-- BEGIN #mainnav -->
+    <div id="mainnav">
+    <ul>
+        {% assign sorted_pages = site.pages | sort:"order" %}
+        {% for node in sorted_pages %}
+          {% if node.title %}
+            {% if node.url == page.url %}
+              <li class="active"><a href="{{ node.url | relative_url }}">{{ node.title | escape }}</a></li>
+            {% else %}
+              <li><a href="{{ node.url | relative_url }}">{{ node.title | escape }}</a></li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+    </ul>
+    </div>
+    <!-- END #mainnav -->
+</header>

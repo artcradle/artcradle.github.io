@@ -1,0 +1,213 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+/* reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Force Element To Self-Clear it’s Children */
+.clearbox:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.clearbox {display: inline-block;}
+/*\*/
+.clearbox {display: block;}
+
+/* layout */
+#page-narrow #column-wrapper {
+  margin: 0 auto;
+  padding: 30px 0 15px;
+  width: 720px;
+}
+
+#container {
+  float: left;
+  width: 574px;
+  background-color: #fff;
+  border-left: 160px solid #fff;
+  /* The width and color of the left rail */
+  border-right: 240px solid #F8EBD5;
+  /* The width and color of the right rail */
+}
+
+
+/* common */
+html, body {background-color: #26282e;;}
+html {
+  font-size: 100%;
+}
+body {
+  font-size: 62.5%;
+  font-family: "Lucida Grande",Arial,helvetica,sans-serif;
+  color: #969799;
+}
+
+header {
+  @extend .clearbox;  
+  margin: 0 auto;
+  width: 720px;
+
+  #logo {
+    float: left;
+    width: 200px;
+    padding: 17px 0 12px 0;
+    font-weight: normal;
+    font-size: 36px;
+    
+    a, a:hover {
+      padding-right: 5px;
+      text-decoration: none;
+      color: #eee;
+    }
+  }
+
+  #mainnav {
+    float: right;
+    margin: 15px 0 0 0;
+
+    ul {
+      list-style: none;
+      float: left;
+      margin-left: 19px;
+      font-size: 140%;
+      display: inline;
+    
+      li {
+        float: left;
+        a {
+          float: left;
+          padding: 0 9px;
+          height: 36px;
+          line-height: 36px;
+          font-weight: bold;
+          color: #fff;
+          text-decoration: none;
+        }
+        a:hover {
+          color: #cecbcd;
+          background-color: transparent;
+        }
+      }
+      li.active a {
+        color: #cecbcd;
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+strong {font-weight: bold;}
+em {font-style: italic;}
+
+a {color: #fefe78;}
+a:hover {color: #ddd;}
+
+.hide {display: none;}
+.hint {margin:6px 0 4px 0; font-size:10px;}
+
+#content {
+  font-size: 13px;
+}
+
+.cont {}
+  .cont-l {margin-bottom: 50px;}
+.cont h2 {
+  padding: 10px 0 15px;
+  color: #ccc;
+  font-family: arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 26px;
+}
+.cont p {
+  margin: 0 0 1em;
+  font-size: 14px;
+  line-height: 1.5em;
+}
+.cont ul {
+  padding-left: 40px;
+  font-size: 14px;
+  list-style-type: disc;
+  line-height: 1.4em;
+}
+
+h2.header {
+  color: #222;
+  font-size: 1.7em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 0.9em;
+}
+h3.header {
+  color: #ccc;
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  line-height: 0.9em;
+}
+
+footer {
+  @extend .clearbox;
+
+  margin: 10px auto;
+  width: 720px;
+  font-size: 1.1em;
+  color: #9d9d9d;
+
+  .copy {
+    float: left;
+    padding-top: 1px;
+    font-size: 10px;
+    line-height: 1.5em;
+    color: #555;
+    
+    a {color: #777;}
+    a:hover {color: #ddd;}
+  }
+}
