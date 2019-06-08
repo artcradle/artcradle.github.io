@@ -61,20 +61,13 @@ table {
 .clearbox {display: block;}
 
 /* layout */
-#page-narrow #column-wrapper {
-  margin: 0 auto;
-  padding: 30px 0 15px;
-  width: 720px;
-}
+#page-narrow {
+  margin: 0 15px;
 
-#container {
-  float: left;
-  width: 574px;
-  background-color: #fff;
-  border-left: 160px solid #fff;
-  /* The width and color of the left rail */
-  border-right: 240px solid #F8EBD5;
-  /* The width and color of the right rail */
+  #column-wrapper {
+    margin: 0 auto;
+    padding: 30px 0 15px;
+  }
 }
 
 
@@ -90,17 +83,14 @@ body {
 }
 
 header {
-  @extend .clearbox;  
+  @extend .clearbox;
   margin: 0 auto;
-  width: 720px;
 
   #logo {
-    float: left;
-    width: 200px;
     padding: 17px 0 12px 0;
     font-weight: normal;
     font-size: 36px;
-    
+
     a, a:hover {
       padding-right: 5px;
       text-decoration: none;
@@ -109,21 +99,19 @@ header {
   }
 
   #mainnav {
-    float: right;
     margin: 15px 0 0 0;
 
     ul {
       list-style: none;
-      float: left;
       margin-left: 19px;
-      font-size: 140%;
+      font-size: 16px;
       display: inline;
-    
+
       li {
         float: left;
         a {
           float: left;
-          padding: 0 9px;
+          padding-right: 12px;
           height: 36px;
           line-height: 36px;
           font-weight: bold;
@@ -153,7 +141,7 @@ a:hover {color: #ddd;}
 .hint {margin:6px 0 4px 0; font-size:10px;}
 
 #content {
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .cont {}
@@ -168,14 +156,18 @@ a:hover {color: #ddd;}
 }
 .cont p {
   margin: 0 0 1em;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5em;
 }
 .cont ul {
   padding-left: 40px;
-  font-size: 14px;
+  font-size: 15px;
   list-style-type: disc;
   line-height: 1.4em;
+
+  li {
+    margin-bottom: 3px;
+  }
 }
 
 h2.header {
@@ -196,18 +188,48 @@ footer {
   @extend .clearbox;
 
   margin: 10px auto;
-  width: 720px;
-  font-size: 1.1em;
+  font-size: 12px;
   color: #9d9d9d;
 
   .copy {
     float: left;
     padding-top: 1px;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.5em;
     color: #555;
-    
+
     a {color: #777;}
     a:hover {color: #ddd;}
+  }
+}
+
+@media only screen and (min-device-width: 480px) {
+  #page-narrow {
+    margin: 0;
+
+    #column-wrapper {
+      width: 720px;
+    }
+  }
+
+  header {
+    width: 720px;
+
+    #logo {
+      float: left;
+      width: 200px;
+    }
+
+    #mainnav {
+      float: right;
+
+      ul {
+        float: left;
+      }
+    }
+  }
+
+  footer {
+    width: 720px;
   }
 }
