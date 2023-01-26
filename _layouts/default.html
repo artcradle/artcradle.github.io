@@ -10,17 +10,16 @@
 
   <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  
+
   <link rel="shortcut icon" type="image/x-icon" href="{{ "/assets/favicon.ico" | relative_url }}">
-  
+
   {% if jekyll.environment == 'production' and site.google_analytics %}
-      {% include google-analytics.html %}
+    {% include google-analytics.html %}
   {% endif %}
 </head>
 <body>
 <!-- BEGIN #page-narrow -->
 <div id="page-narrow" class="clearbox">
-
   {% include header.html %}
 
   <main class="page-content" aria-label="Content">
@@ -30,7 +29,6 @@
   </main>
 
   {% include footer.html %}
-
 </div>
 <!-- END #page-narrow -->
 </body>
